@@ -11,6 +11,10 @@ $(document).ready(function () {
 
     getTasks(template, container);
 
+    // Click
+    button.click(function() {
+        createTask(template, container, input);
+    })
     
 
 }); // <-- End ready
@@ -20,8 +24,10 @@ $(document).ready(function () {
  * FUNCTIONS
  ***********/
 
-// Crud
+// cRud
 function getTasks(template, container) {
+    container.html('');
+
     $.ajax({
         url: 'http://157.230.17.132:3023/todos',
         method: 'GET',
@@ -33,5 +39,20 @@ function getTasks(template, container) {
         }
     }).fail(function() {
         console.log('Errore chiamata');
-    })
+    });
+}
+
+// Crud
+function createTask(template, container, input) {
+    $.ajax({
+        url: 'http://157.230.17.132:3023/todos',
+        method: 'POST',
+        data: {
+            text: input.val()
+        }
+    }).done(function(res) {
+        getTasks(template, container);
+    }).fail(function(){
+        console.log('Errore chiamata');
+    });
 }
