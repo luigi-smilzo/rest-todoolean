@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+    <script src="js/main.js"></script>
+    <title>Todoolean</title>
+</head>
+
+<body>
+    <header>
+        <h1>ToDoolean</h1>
+        <input id="Input" type="text">
+        <button id="Button">Do it!</button>
+    </header>
+
+    <main>
+        <ul class="TaskList">
+        
+        </ul>
+    </main>
+
+    <!-- Template -->
+    <script id="list-template" type="text/x-handlebars-template">
+        <li class="TaskList-task" data-id="{{ id }}">
+            {{ text }}
+            <span>X</span>
+        </li>
+    </script>
+</body>
+</html>

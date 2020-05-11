@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#Input {
+    margin-bottom: 20px;
+}
+
+.TaskList-task span {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
+
